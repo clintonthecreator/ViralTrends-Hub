@@ -1,0 +1,942 @@
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewpoint"
+content="width=device-width,
+intial-scale=1.0">
+ <title>ViralTrends Hub -
+Discover what's Trending worldwide</title>
+<meta name="description"
+content="Real-time trending topics,and interactive
+experiences updated every minute>
+ <style>
+  :root{
+      --primary:ff4757;
+      --secondary:3742fa;
+      --dark:2f3542;
+      --light:f1f2f6;
+      --accent:ffa504;
+                        }
+*{
+  margin:0;
+  padding:0;
+  box sizing: border-box;
+  font-family: 'segoe
+UI',Tahoma, Geneva,Verdana, sansserif;
+                                       }
+   body{
+        background-color:
+var(--light);
+           color:var(--dark);
+           line-hieght: 1.6;                             }
+  head{
+       background:linear-gradient(135deg, var(--primary),
+       var(--secondary));
+       color: white;
+     padding:1rem 0;
+     position: sticky;
+     top: 0;
+     z-index: 100;
+    box-shadow:0 2px 10px 
+rgba(0,0,0,0.1);
+        }
+
+        .contianer{
+            width: 90%
+          max-width:1200px;
+             margin: 0auto; 
+        }
+       
+        .header-content {
+               display: flex; 
+           justify-content: space-
+between;
+           align-items:  center;
+        }
+
+        .logo {
+           font-size: 1.8rem;
+           font-weight: 700;
+          display-items: center;
+       }
+       
+       .logo span {
+             color:  var(--accent);
+       }
+     
+      nav ul {
+            display : flex; 
+           list-style: none;
+      }
+    nav ul li {
+             margin-left: 1.5rem; 
+      }
+     .mobile-menu {
+               display :none; 
+               font-size: 1.5rem;
+              cursor: pointer; 
+      }
+        background:
+url('https://images.unsplash.com/
+ photos-1516321318423-f06f85e504b3?
+ ixlib=rb-1.2.1&auto=format&fit=crop
+&w=1350&q=80') no-repeat center 
+center/cover;
+             hieght: 70vh
+            display: flex;
+           align-items: center; 
+             position: relative; 
+     }
+    .hero::before {
+        content: '';
+      position: absolute; 
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: 100%; 
+      background:
+rgba(0,0,0,0.5);
+     }
+
+    .hero-content {
+        position: relative; 
+         z-index: 10;
+        color: white; 
+      max-width: 600px;
+   }
+
+    .hero h1 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+       line-hieght: 1.2; 
+    }
+
+    .hero p { 
+         font-size: 1,2rem;
+         margin-bottom: 2rem;
+   }
+
+    .btn {
+          display: inline-block;
+           backgtound: var(--
+accent);
+          color: white; 
+          padding: 0.8rem 1.5rem; 
+          border: none; 
+          border-radius: 50px
+         font-weight: 600; 
+         text-decoration: none; 
+         transition: all 0.3s
+ease;
+         cursor: pointer; 
+   }     
+
+    .btn:hover {
+         transform:
+translateY(-3px)
+          box-shadow: 0 10px 20px 
+rgba(0,0,0,0.1)
+    }   
+
+      .trending section {
+                            padding:4rem 0;
+   }
+      .section-title { 
+                 text-align:center;
+                 margin-botton: 3rem;
+   }
+
+     .section-title h2 {
+          font-size: 2,5rem;
+           color:var(--dark);
+            position: relative;
+          display: inline-block; 
+    }
+    .section-title h2::after {
+       content:'';
+       position: absolute;
+       bottom: -10px 
+       left:  50%;
+       transform:
+transletex(-50%)
+      width : 80px
+      height: 4px;
+      background: var(--
+ primary);
+    }
+
+    .trending-card {
+        background: white; 
+        border-radius: 10px;
+        overflow: hidden;
+       box-shadow: 0 5px 15px 
+rgba(0,0,0,0.1)
+          transition: all  0.3s
+ease;
+      }
+     
+       .trending-card:hover  {
+         transform:  
+translateY(-10px);
+         box-shadow: 0 15px 30px
+rgba(0,0,0,0.2);
+     }
+
+      .card-image  {
+         hieght: 200px; 
+        overflow: hidden; 
+     }
+   
+     .card-image img {
+         width: 100%
+       hieght: 100%
+       object-fit: cover; 
+       transition: transform 
+0.5s ease; 
+       }
+
+      .trending-card:hover .card-
+image img {
+            transform: scale(1.1);
+       }
+
+      .card-content  {
+          padding: 1.5rem;
+       }
+     
+      .card-content h3  {
+                  color: 666;
+                margin-bottom: 0.5rem;
+                font-size: 1.3rem;
+      }
+
+      .card-content p  {
+               color 666; 
+              margin-bottom: 1rem; 
+             font-size: 0.9rem;
+      }
+     
+      .card-meta { 
+          display: flex;
+         justify-content: space-
+between;
+        
+       align-items: center
+      font-size:0.8rem
+       color: 888;
+     
+     }
+  
+      .viral-meter {
+          display:
+       align-items: center;
+    }
+ 
+     .viral-meter span {
+          margin-left: 5px;
+    }
+    
+    .interactive-section {
+            background: linear-
+gradient(135deg,  var(--secondary),
+var(--dark));
+             padding: 4rem 0;
+            color: white;
+    }
+     
+     .poll-container {
+           max-width: 600px;
+           margin: 0 auto; 
+          background:
+rgba(255,255,255,0.1);
+         padding: 2rem;
+       border-radius: 10px;
+      backdrop-filter:
+blur(10px);
+    }
+    
+    .poll-question {
+       font-size: 1.5rem;
+     margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+   .poll-option {
+      margin-bottom: 1.5rem;
+    }  
+    .poll-option {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+      }
+       
+      .poll-option:hover {
+            background: rgba(255,255,255,0.3);
+        }
+       
+      .poll-option.selected {
+            background: var(--accent);
+        } .poll-percentage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+       
+        .poll-option-text {
+            position: relative;
+            z-index: 2;
+        }
+       
+        .poll-results {
+            display: none;
+        }
+       
+        .newsletter-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+       
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+       
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+       
+        .newsletter-form button {
+            padding: 1rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+       
+        .newsletter-form button:hover {
+            background: #ff6b81;
+        }
+       
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+       
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+       
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+       
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+       
+        .footer-column ul {
+            list-style: none;
+        }
+       
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+       
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+       
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+       
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+       
+        .social-links a {
+            color: white;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+       
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+       
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+       
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+           
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+           
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+           
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+           
+            .hero p {
+                font-size: 1rem;
+            }
+           
+            .newsletter-form {
+                flex-direction: column;
+            }
+           
+            .newsletter-form input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+           
+            .newsletter-form button {
+                border-radius: 50px;
+            }
+        }
+       
+        @media (max-width: 480px) {
+            .mobile-menu {
+                display: block;
+            }
+           
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+           
+            nav.active {
+                display: block;
+            }
+           
+            nav ul {
+                flex-direction: column;
+            }
+           
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+           
+            .hero {
+                height: 60vh;
+            }
+           
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+           
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+       
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+       
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+       
+        /* Trending badge */
+        .trending-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+       
+        /* Countdown timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+       
+        .countdown-item {
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+       
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+       
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Viral<span>Trends</span> Hub</div>
+                <div class="mobile-menu">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#trending">Trending Now</a></li>
+                        <li><a href="#interactive">Vote Now</a></li>
+                        <li><a href="#newsletter">Get Updates</a></li>
+                        <li><a href="#" class="btn">Submit Content</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+   
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover What's Going Viral Right Now</h1>
+                <p>Real-time trending topics, viral content, and interactive experiences updated every minute. Join millions who stay ahead of the curve.</p>
+                <a href="#trending" class="btn pulse">Explore Trends</a>
+            </div>
+        </div>
+    </section>
+   
+    <section id="trending" class="trending-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🔥 Trending Worldwide</h2>
+            </div>
+           
+            <div class="trending-grid">
+                <!-- Trending Item 1 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="AI Technology">
+                        <div class="trending-badge">1</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>AI Creates Stunning Artwork</h3>
+                        <p>New AI tool transforms simple sketches into photorealistic images, sparking debate among artists.</p>
+                        <div class="card-meta">
+                            <div>2.4M views</div>
+                            <div class="viral-meter">📈 <span>+432%</span></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Trending Item 2 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Music Festival">
+                        <div class="trending-badge">2</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Surprise Headliner at Music Fest</h3>
+                        <p>Legendary band reunites for one-night-only performance, breaking social media records.</p>
+                        <div class="card-meta">
+                            <div>1.8M views</div>
+                            <div class="viral-meter">📈 <span>+389%</span></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Trending Item 3 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Meeting">
+                        <div class="trending-badge">3</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>4-Day Work Week Goes Global</h3>
+                        <p>Major companies report increased productivity after adopting shortened work week.</p>
+                        <div class="card-meta">
+                            <div>1.2M views</div>
+                            <div class="viral-meter">📈 <span>+276%</span></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Trending Item 4 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Science Lab">
+                        <div class="trending-badge">4</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Breakthrough in Renewable Energy</h3>
+                        <p>Scientists achieve record efficiency with new solar cell technology that works at night.</p>
+                        <div class="card-meta">
+                            <div>980K views</div>
+                            <div class="viral-meter">📈 <span>+210%</span></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Trending Item 5 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fitness">
+                        <div class="trending-badge">5</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>10-Minute Workout Goes Viral</h3>
+                        <p>Fitness influencer's quick routine proves surprisingly effective in clinical study.</p>
+                        <div class="card-meta">
+                            <div>850K views</div>
+                            <div class="viral-meter">📈 <span>+198%</span></div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Trending Item 6 -->
+                <div class="trending-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Food">
+                        <div class="trending-badge">6</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Strange Food Combo Sweeps TikTok</h3>
+                        <p>Unexpected ingredient pairing becomes must-try trend, selling out in stores nationwide.</p>
+                        <div class="card-meta">
+                            <div>720K views</div>
+                            <div class="viral-meter">📈 <span>+165%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section id="interactive" class="interactive-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">🗳️ Daily Viral Poll</h2>
+            </div>
+           
+            <div class="poll-container">
+                <div class="poll-question">Which of these emerging trends will dominate 2024?</div>
+               
+                <div class="poll-options">
+                    <div class="poll-option" data-option="1">
+                        <div class="poll-percentage"></div>
+                        <div class="poll-option-text">AI personal assistants replacing search engines</div>
+                    </div>
+                    <div class="poll-option" data-option="2">
+                        <div class="poll-percentage"></div>
+                        <div class="poll-option-text">Virtual reality social networks</div>
+                    </div>
+                    <div class="poll-option" data-option="3">
+                        <div class="poll-percentage"></div>
+                        <div class="poll-option-text">Decentralized creator economies</div>
+                    </div>
+                    <div class="poll-option" data-option="4">
+                        <div class="poll-percentage"></div>
+                        <div class="poll-option-text">Biohacking and DIY biology</div>
+                    </div>
+                </div>
+               
+                <button id="vote-btn" class="btn">Vote Now</button>
+               
+                <div class="poll-results">
+                    <h3>Poll Results:</h3>
+                    <div class="poll-option" data-option="1">
+                        <div class="poll-percentage" style="width: 42%;"></div>
+                        <div class="poll-option-text">AI personal assistants (42%)</div>
+                    </div>
+                    <div class="poll-option" data-option="2">
+                        <div class="poll-percentage" style="width: 28%;"></div>
+                        <div class="poll-option-text">VR social networks (28%)</div>
+                    </div>
+                    <div class="poll-option" data-option="3">
+                        <div class="poll-percentage" style="width: 18%;"></div>
+                        <div class="poll-option-text">Decentralized economies (18%)</div>
+                    </div>
+                    <div class="poll-option" data-option="4">
+                        <div class="poll-percentage" style="width: 12%;"></div>
+                        <div class="poll-option-text">Biohacking (12%)</div>
+                    </div>
+                   
+                    <div style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>24,593 votes</strong> | Share this poll:
+                        <div class="social-links" style="justify-content: center; margin-top: 0.5rem;">
+                            <a href="#">📱</a>
+                            <a href="#">📧</a>
+                            <a href="#">🔗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>📬 Never Miss a Viral Trend</h2>
+                <p>Get our daily digest of what's trending straight to your inbox</p>
+            </div>
+           
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-hours">12</div>
+                    <div class="countdown-label">HOURS</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-minutes">34</div>
+                    <div class="countdown-label">MINUTES</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-seconds">56</div>
+                    <div class="countdown-label">SECONDS</div>
+                </div>
+            </div>
+           
+            <p style="margin-bottom: 2rem;">Next update in:</p>
+           
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe Now</button>
+            </form>
+           
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: #666;">Join 1.2M+ subscribers who get our trending alerts</p>
+        </div>
+    </section>
+   
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ViralTrends Hub</h3>
+                    <p>Your source for real-time viral content and emerging trends worldwide. We track what's trending across social media, news, and pop culture.</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>Trending</h3>
+                    <ul>
+                        <li><a href="#">Today</a></li>
+                        <li><a href="#">This Week</a></li>
+                        <li><a href="#">Month</a></li>
+                        <li><a href="#">All Time</a></li>
+                        <li><a href="#">By Category</a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">How We Track</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Copyright</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="copyright">
+                <p>&copy; 2023 ViralTrends Hub. All rights reserved. | Data updates every 60 seconds</p>
+            </div>
+        </div>
+    </footer>
+   
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+       
+        // Poll functionality
+        const pollOptions = document.querySelectorAll('.poll-option');
+        const voteBtn = document.getElementById('vote-btn');
+        const pollResults = document.querySelector('.poll-results');
+       
+        let selectedOption = null;
+       
+        pollOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                pollOptions.forEach(opt => opt.classList.remove('selected'));
+               
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                selectedOption = this.getAttribute('data-option');
+            });
+        });
+       
+        voteBtn.addEventListener('click', function() {
+            if (selectedOption) {
+                // In a real implementation, you would send this to your server
+                // For demo purposes, we'll just show the results
+                document.querySelector('.poll-options').style.display = 'none';
+                voteBtn.style.display = 'none';
+                pollResults.style.display = 'block';
+               
+                // Track conversion (for analytics)
+                console.log('User voted for option:', selectedOption);
+            } else {
+                alert('Please select an option first!');
+            }
+        });
+       
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const nextHour = new Date();
+            nextHour.setHours(now.getHours() + 1, 0, 0, 0);
+           
+            const diff = nextHour - now;
+           
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+           
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+       
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+       
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+           
+            // In a real implementation, you would send this to your email service
+            console.log('New subscriber:', email);
+           
+            // Show confirmation
+            alert('Thanks for subscribing! You\'ll receive our next trending digest.');
+            this.querySelector('input').value = '';
+           
+            // Track conversion (for analytics)
+            console.log('New newsletter signup');
+        });
+       
+        // Track trending card clicks
+        document.querySelectorAll('.trending-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h3').textContent;
+                console.log('User viewed trending item:', title);
+               
+                // In a real implementation, you would track this as a conversion event
+                // and potentially redirect to a full article page
+            });
+        });
+       
+        // Animate elements when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+       
+        document.querySelectorAll('.trending-card, .poll-container, .newsletter-form').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+```
+
+
+
+
+
+          
+            
+      
+    
+ 
+       
